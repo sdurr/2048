@@ -6,13 +6,15 @@
 #    By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/27 22:03:00 by sdurr             #+#    #+#              #
-#    Updated: 2015/02/27 22:20:07 by sdurr            ###   ########.fr        #
+#    Updated: 2015/02/27 22:41:14 by sdurr            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME		= game_2048
 
 SRC			= main.c \
+				init_curses.c \
+				draw_board.c \
 
 OBJ			= $(SRC:.c=.o)
 

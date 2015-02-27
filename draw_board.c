@@ -1,28 +1,25 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   draw_board.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/27 22:04:39 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/27 22:35:43 by sdurr            ###   ########.fr       */
+/*   Created: 2015/02/27 22:36:03 by sdurr             #+#    #+#             */
+/*   Updated: 2015/02/27 22:44:41 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <curses.h>
 #include "game.h"
+#include <curses.h>
 
-int main(int ac, char **av, char **env)
+void		draw_board(void)
 {
-	ft_putstr("begin");
-		init_curses();
-		draw_board();
-		if (ac > 0)
-	ft_putstr("yes");
-	if (av[1])
-		ft_putstr(*env);
-	return (0);
+	mvaddch(1, 0, '+');
+	mvaddch(1, 4, '+');
+	mvaddch(1, 6, '+');
+	mvaddch(1, 8, '+');
+	mvaddch(1, 16, '+');
+	mvaddch(1, 32, '+');
+
 }
