@@ -6,20 +6,22 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:36:03 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/27 22:44:41 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/02/28 00:25:19 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
+#include "libft.h"
 #include <curses.h>
 
-void		draw_board(void)
+void		draw_board(int signal)
 {
-	mvaddch(1, 0, '+');
-	mvaddch(1, 4, '+');
-	mvaddch(1, 6, '+');
-	mvaddch(1, 8, '+');
-	mvaddch(1, 16, '+');
-	mvaddch(1, 32, '+');
-
+	if (signal != -3)
+		border('|', '|', '_', '_', '+', '+', '+', '+');
+	mvvline(0, COLS/4, '|', LINES);
+	mvvline(0, COLS/2, '|', LINES);
+	mvvline(0, COLS/4 * 3, '|', LINES);
+	mvhline(LINES / 4, 0, '_',  COLS);
+	mvhline(LINES / 2, 0, '_', COLS);
+	mvhline(LINES / 4 * 3, 0, '_', COLS);
 }
