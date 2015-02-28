@@ -12,34 +12,26 @@
 
 #include "game.h"
 
-int	**rot_right(int **i)
+int	**test_fusion_right(int **i)
 {
 	int j;
 	int k;
-	int bkp;
 
 	j = 0;
 	k = 3;
 	while (j <= 3)
 	{
-		if ((bkp = i[j][k]) == 0)
-		{
-			while (--k >= 0 && i[j][k] != 0)
-			{
-				if (i[j][k] != bkp)
-				{
-					i[j][k+1] = i[j][k];
-					i[j][k] = 0;
-				}
-			}
+	  while (k >= 0)
+	    {
+	      if (i[j][k] == i[j][k -1])
+		{	     
+		  i[j][k] = 2 * i[j][k];
+		  i[j][k - 1] = 0; 
 		}
-		else if (k > 0)
 		  k--;
-		else
-		  {	 
-		    k = 3;
-		    j++;
-		  }
+	    }			  
+	      k = 3;
+	      j++;
 	}
 	return(i);
 }

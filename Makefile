@@ -21,6 +21,11 @@ SRC			= main.c \
 				print_tab.c \
 				init_i.c \
 				rot_right.c \
+				rot_left.c \
+				rot_up.c \
+				test_fusion_right.c \
+				test_fusion_left.c \
+				rand_board.c \
 
 OBJ			= $(SRC:.c=.o)
 
@@ -33,11 +38,9 @@ RM			= /bin/rm -f
 PATHLIB		= -I libft/includes
 
 $(NAME)	:		$(OBJ)
-				Make -C libft
-				$(CC) $(CFLAGS) -o $(NAME) $(OBJ) -L libft -lft -lncurses
+				$(CC) $(CFLAGS) -o $(NAME) $(OBJ) libft/libft.a -lncurses
 
 clean	:
-				Make -C libft/ fclean
 				$(RM) $(OBJ)
 				$(RM) *~
 

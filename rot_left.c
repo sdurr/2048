@@ -12,32 +12,32 @@
 
 #include "game.h"
 
-int	**rot_right(int **i)
+int	**rot_left(int **i)
 {
 	int j;
 	int k;
 	int bkp;
 
 	j = 0;
-	k = 3;
+	k = 0;
 	while (j <= 3)
 	{
 		if ((bkp = i[j][k]) == 0)
 		{
-			while (--k >= 0 && i[j][k] != 0)
+			while (++k <= 3 && i[j][k] != 0)
 			{
 				if (i[j][k] != bkp)
 				{
-					i[j][k+1] = i[j][k];
+					i[j][k-1] = i[j][k];
 					i[j][k] = 0;
 				}
 			}
 		}
-		else if (k > 0)
-		  k--;
+		else if (k < 3)
+		  k++;
 		else
 		  {	 
-		    k = 3;
+		    k = 0;
 		    j++;
 		  }
 	}

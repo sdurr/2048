@@ -20,11 +20,17 @@ enum	e_const
 	WIN = 2048
 };
 
-WINDOW		*init_curses(int **i);
-void		draw_board(int **i);
-int		**send_digit(int key, int **i);
+WINDOW			*init_curses(int **i);
+void			draw_board(int **i);
+int			**send_digit(int key, int **i);
 int			key_pad(WINDOW *win);
-void		print_tab(int **i);
+void			print_tab(int **i);
 int			**init_i(void);
 int			**rot_right(int **i);
+int			**rot_left(int **i);
+int			**rot_up(int **i);
+int			**test_fusion_right(int **i);
+int			**test_fusion_left(int **i);
+int			**rand_board(int **i);
+
 #endif
