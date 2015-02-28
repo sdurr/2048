@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_board.c                                       :+:      :+:    :+:   */
+/*   sencas.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/27 22:36:03 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 14:05:48 by sdurr            ###   ########.fr       */
+/*   Created: 2015/02/28 13:31:06 by sdurr             #+#    #+#             */
+/*   Updated: 2015/02/28 14:11:51 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game.h"
-#include "libft.h"
 #include <curses.h>
 
-void		draw_board(int signal)
+void		send_digit(void)
 {
-	clear();
-	if (signal != -3)
-		border(':', ':', '_', '_', '+', '+', '+', '+');
-	mvvline(0, COLS/4, ':', LINES);
-	mvvline(0, COLS/2, ':', LINES);
-	mvvline(0, (COLS/4) * 3, ':', LINES);
-	mvhline(LINES / 4, 0, '_',  COLS);
-	mvhline(LINES / 2, 0, '_', COLS);
-	(LINES % 2) == 0 ? mvhline((LINES / 4) * 3, 0, '_', COLS)
-		: mvhline((LINES/2) + (LINES/4), 0, '_', COLS);
+
 }
