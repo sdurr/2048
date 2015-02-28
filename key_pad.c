@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 13:36:37 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 18:02:30 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/02/28 20:51:24 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include "game.h"
 
-void		key_pad(WINDOW *win)
+int		key_pad(WINDOW *win)
 {
 	int i;
 
@@ -23,4 +23,5 @@ void		key_pad(WINDOW *win)
 	i = getch();
 	if (i == 27)
 		exit (0);
+	return (i);
 }

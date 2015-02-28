@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 13:31:06 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 20:33:57 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/02/28 20:47:59 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include <stdlib.h>
 #include "game.h"
 
-int 		*send_digit(int key, int *i)
+int 		**send_digit(int key, int **i)
 {
 	if (key == KEY_DOWN)
 	{
-		i = rot_down(i);
+//		i = rot_down(i);
 		clear();
 		draw_board(i);
 	}
