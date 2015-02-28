@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:28:34 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 00:29:17 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/02/28 11:58:34 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void		init_curses(void)
 	if (i == 27)
 		exit(0);
 	draw_board(0);
-	signal(SIGWINCH, &draw_board);
+	refresh();
 	endwin();
 
 }

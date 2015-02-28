@@ -7,7 +7,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:04:39 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 00:28:23 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/02/28 11:56:39 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,18 @@
 #include <signal.h>
 #include "game.h"
 
-int main(int ac, char **av, char **env)
+int main(void)
 {
 	while (1)
 	{
 		init_curses();
+		signal(SIGWINCH, &draw_board);
+		refresh();
+
 		mvaddch(LINES / 8, COLS / 8, '2');
 		refresh();
 		mvaddch(LINES / 8 * 3, COLS / 8, '2');
 		refresh();
 	}
-	if (ac > 0)
-		ft_putstr("yes");
-	if (av[1])
-		ft_putstr(*env);
 	return (0);
 }
