@@ -6,13 +6,22 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 13:31:06 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 14:11:51 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/02/28 15:46:40 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <curses.h>
+#include <stdlib.h>
 
 void		send_digit(void)
 {
+	int i;
 
+	i = rand();
+	if (i % 2 == 0)
+	{
+		mvaddch(LINES / 8, COLS / 8, '2');
+	}
+		else
+		mvaddch(LINES / 8, COLS / 8, '4');
 }

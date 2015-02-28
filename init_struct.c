@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game.h                                             :+:      :+:    :+:   */
+/*   init_struct.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/27 22:05:44 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 15:49:14 by sdurr            ###   ########.fr       */
+/*   Created: 2015/02/28 14:40:00 by sdurr             #+#    #+#             */
+/*   Updated: 2015/02/28 15:51:07 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		GAME_H
-# define	GAME_H
+#include "game.h"
+#include <stdlib.h>
+#include "libft.h"
 
-# include <curses.h>
 
-enum	e_const
+
+void init_struct(void)
 {
-	WIN = 2048
-};
+/*	int	i[4][4];
 
-typedef struct s_list
-{
-	int x;
-	int y;
-	int n;
-	struct s_list *next;
-}			t_list;
-
-void		init_curses(void);
-void		draw_board(int x, int y);
-void		send_digit(void);
-void		key_pad(WINDOW *win);
-
-#endif
+	if((i[0][0] = test_case(LINES/8, COLS/8) == 0))
+		ret += 1;
+	if ((i[0][1] = test_case(LINES/8 * 3, COLS/8) == 0))
+		ret += 2;
+*/}

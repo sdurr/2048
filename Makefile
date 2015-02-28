@@ -6,7 +6,7 @@
 #    By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/27 22:03:00 by sdurr             #+#    #+#              #
-#    Updated: 2015/02/28 13:39:14 by sdurr            ###   ########.fr        #
+#    Updated: 2015/02/28 14:49:49 by sdurr            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -17,6 +17,8 @@ SRC			= main.c \
 				draw_board.c \
 				send_digit.c \
 				key_pad.c \
+				init_struct.c \
+				ft_create_elem.c \
 
 OBJ			= $(SRC:.c=.o)
 

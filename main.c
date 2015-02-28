@@ -7,7 +7,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:04:39 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 14:12:46 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/02/28 16:03:47 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,25 @@
 
 int main(void)
 {
-	sig_t i;
+	int x;
+	int y;
 
-	i = signal(SIGWINCH, &draw_board);
+	int new_x;
+	int new_y;
+	init_curses();
+	getmaxyx(stdscr, y, x);
 	while (1)
 	{
-		init_curses();
-		signal(SIGWINCH, &draw_board);
-//		draw_board(0);
-		mvaddch(LINES / 8, COLS / 8, '2');
-		mvaddch(LINES / 8 * 3, COLS / 8, '2');
-		endwin();
+			init_curses();
+		getmaxyx(stdscr, new_y, new_x);
+		if (y != new_y || x != new_x)
+		{
+			y = new_y;
+			x = new_x;
+			draw_board(x, y);
+		}
 	}
-	return (0);
+
+	endwin();
+return (0);
 }
