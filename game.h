@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:05:44 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 15:49:14 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/02/28 16:14:39 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_list
 }			t_list;
 
 void		init_curses(void);
-void		draw_board(int x, int y);
+void		draw_board(void);
 void		send_digit(void);
 void		key_pad(WINDOW *win);
 

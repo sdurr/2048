@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:36:03 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 16:03:56 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/02/28 16:17:17 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 void		draw_board(void)
 {
 	clear();
+	if (COLS < 15 || LINES < 15)
+		exit (0);
 	border(':', ':', '_', '_', '+', '+', '+', '+');
 	mvvline(0, COLS/4, ':', LINES);
 	mvvline(0, COLS/2, ':', LINES);
@@ -25,6 +27,5 @@ void		draw_board(void)
 	mvhline(LINES / 2, 0, '_', COLS);
 	(LINES % 2) == 0 ? mvhline((LINES / 4) * 3, 0, '_', COLS)
 		: mvhline((LINES/2) + (LINES/4), 0, '_', COLS);
-	if (x && y)
 	send_digit();
 }
