@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 13:36:37 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 14:32:46 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/02/28 18:02:30 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,4 @@ void		key_pad(WINDOW *win)
 	i = getch();
 	if (i == 27)
 		exit (0);
-//	draw_board(0);
-	send_digit();
-	refresh();
 }

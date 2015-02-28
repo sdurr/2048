@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:28:34 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 16:15:06 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/02/28 18:52:51 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,12 @@
 #include "game.h"
 #include <signal.h>
 
-void		init_curses(void)
+WINDOW		*init_curses(int *i)
 {
-	WINDOW *win;
-
-	win = initscr();
+	initscr();
 	raw();
 	noecho();
-	draw_board();
+	draw_board(i);
 	refresh();
-	key_pad(win);
-
+	return (stdscr);
 }

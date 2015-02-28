@@ -6,7 +6,7 @@
 #    By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/27 22:03:00 by sdurr             #+#    #+#              #
-#    Updated: 2015/02/28 14:49:49 by sdurr            ###   ########.fr        #
+#    Updated: 2015/02/28 18:56:55 by sdurr            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -19,6 +19,8 @@ SRC			= main.c \
 				key_pad.c \
 				init_struct.c \
 				ft_create_elem.c \
+				print_tab.c \
+				init_i.c \
 
 OBJ			= $(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:36:03 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 16:17:17 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/02/28 19:03:02 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "libft.h"
 #include <curses.h>
 
-void		draw_board(void)
+void		draw_board(int *i)
 {
 	clear();
 	if (COLS < 15 || LINES < 15)
@@ -27,5 +27,5 @@ void		draw_board(void)
 	mvhline(LINES / 2, 0, '_', COLS);
 	(LINES % 2) == 0 ? mvhline((LINES / 4) * 3, 0, '_', COLS)
 		: mvhline((LINES/2) + (LINES/4), 0, '_', COLS);
-	send_digit();
+	print_tab(i);
 }

@@ -7,7 +7,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:04:39 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 16:14:50 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/02/28 19:54:18 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,26 @@ int main(void)
 {
 	int x;
 	int y;
-
 	int new_x;
 	int new_y;
-	init_curses();
+	WINDOW *st;
+	int key;
+	int *i;
+
+	i = init_i();
+	st = init_curses(i);
 	getmaxyx(stdscr, y, x);
 	while (1)
 	{
-			init_curses();
 		getmaxyx(stdscr, new_y, new_x);
 		if (y != new_y || x != new_x)
 		{
 			y = new_y;
 			x = new_x;
-			draw_board();
+			draw_board(i);
 		}
+		key = key_pad(st);
+		i = send_digit(key, i);
 	}
 
 	endwin();

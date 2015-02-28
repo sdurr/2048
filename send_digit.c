@@ -6,22 +6,36 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 13:31:06 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 15:46:40 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/02/28 20:33:57 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <curses.h>
 #include <stdlib.h>
+#include "game.h"
 
-void		send_digit(void)
+int 		*send_digit(int key, int *i)
 {
-	int i;
-
-	i = rand();
-	if (i % 2 == 0)
+	if (key == KEY_DOWN)
 	{
-		mvaddch(LINES / 8, COLS / 8, '2');
+		i = rot_down(i);
+		clear();
+		draw_board(i);
 	}
-		else
-		mvaddch(LINES / 8, COLS / 8, '4');
+	if (key == KEY_LEFT)
+	{
+		clear();
+		draw_board(i);
+	}
+	if (key == KEY_RIGHT)
+	{
+		clear();
+		draw_board(i);
+	}
+	if (key == KEY_UP)
+	{
+		clear();
+		draw_board(i);
+	}
+	return (i);
 }
