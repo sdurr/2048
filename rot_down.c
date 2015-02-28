@@ -6,16 +6,16 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 20:34:09 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 20:42:23 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/02/28 21:00:06 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int *rot_down(int *i)
+int **rot_down(int **i)
 {
 	int j;
 	int k;
-
+int
 
 }

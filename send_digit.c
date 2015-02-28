@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 13:31:06 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 20:47:59 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/02/28 21:00:29 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int 		**send_digit(int key, int **i)
 	}
 	if (key == KEY_RIGHT)
 	{
+		i = rot_right(i);
 		clear();
 		draw_board(i);
 	}

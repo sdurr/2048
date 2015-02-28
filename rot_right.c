@@ -1,30 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game.h                                             :+:      :+:    :+:   */
+/*   rot_right.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/27 22:05:44 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 21:09:44 by sdurr            ###   ########.fr       */
+/*   Created: 2015/02/28 21:00:36 by sdurr             #+#    #+#             */
+/*   Updated: 2015/02/28 22:04:35 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		GAME_H
-# define	GAME_H
+#include "game.h"
 
-# include <curses.h>
-
-enum	e_const
+int	**rot_right(int **i)
 {
-	WIN = 2048
-};
+	int j;
+	int k;
+	int bkp;
 
-WINDOW		*init_curses(int **i);
-void		draw_board(int **i);
-int		**send_digit(int key, int **i);
-int			key_pad(WINDOW *win);
-void		print_tab(int **i);
-int			**init_i(void);
-int			**rot_right(int **i);
-#endif
+	j = 0;
+	k = 3;
+	while (j <= 3 && k < 4)
+	{
+		if ((bkp = i[j][k]) == 0)
+		{
+			while (--k >= 0 && i[j][k] != 0)
+			{
+				if (i[j][k] != bkp)
+				{
+					i[j][3] = i[j][k];
+					i[j][k] = 0;
+				}
+			}
+		}
+		if (k == 0 && j == 3)
+		{
+			k++;
+			j = -1;
+		}
+		j++;
+	}
+	return(i);
+}
