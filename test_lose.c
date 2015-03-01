@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sencas.c                                           :+:      :+:    :+:   */
+/*   test_random.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 13:31:06 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 20:22:00 by sdurr            ###   ########.fr       */
+/*   Created: 2015/03/01 15:12:38 by sdurr             #+#    #+#             */
+/*   Updated: 2015/03/01 20:30:35 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <curses.h>
 #include <stdlib.h>
-#include "game.h"
+#include "libft.h"
+#include <curses.h>
 
-int		**send_digit(int key, int **i)
+int			test_lose(int **i)
 {
-	int test;
+	int j;
+	int k;
 
-	test = 0;
-	test_lose(i);
-	if (key == KEY_DOWN)
-		i = press_down(i);
-	if (key == KEY_LEFT)
-		i = press_left(i);
-	if (key == KEY_RIGHT)
-		i = press_right(i);
-	if (key == KEY_UP)
-		i = press_up(i);
-	return (i);
+	j = 0;
+	k = 0;
+	while (j <= 3)
+	{
+		while (k <= 3)
+		{
+			if (i[j][k] == 0)
+				return (1);
+			k++;
+		}
+		k = 0;
+		j++;
+	}
+	endwin();
+	ft_putstr("YOU LOSE");
+	exit (0);
 }

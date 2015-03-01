@@ -6,13 +6,14 @@
 #    By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/27 22:03:00 by sdurr             #+#    #+#              #
-#    Updated: 2015/03/01 20:02:00 by sdurr            ###   ########.fr        #
+#    Updated: 2015/03/01 20:23:02 by sdurr            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME		= game_2048
 
 SRC			= main.c \
+				test_lose.c \
 				init_curses.c \
 				draw_board.c \
 				send_digit.c \
