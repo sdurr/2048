@@ -6,25 +6,19 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 21:00:36 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 16:04:39 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/03/01 18:11:40 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	**rot_down(int **i, int *test)
+int			**rot_down(int **i, int *test, int j, int k)
 {
-	int j;
-	int k;
-	int bkp;
-
-	j = 3;
-	k = 0;
 	while (k <= 3)
 	{
 		if (j > 0)
 		{
-			if ((bkp = i[j][k]) == 0)
+			if (i[j][k] == 0)
 			{
 				while (--j >= 0 && i[j][k] != 0)
 				{
@@ -37,10 +31,10 @@ int	**rot_down(int **i, int *test)
 				j--;
 		}
 		else
-		  {
-		    k++;
-		    j = 3;
-		  }
+		{
+			k++;
+			j = 3;
+		}
 	}
-	return(i);
+	return (i);
 }

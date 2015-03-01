@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:28:34 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 20:50:25 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/03/01 17:30:31 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 WINDOW		*init_curses(int **i)
 {
 	initscr();
-	raw();
 	noecho();
 	draw_board(i);
 	refresh();

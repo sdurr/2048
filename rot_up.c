@@ -6,44 +6,37 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 21:00:36 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 16:12:43 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/03/01 17:40:04 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	**rot_up(int **i, int *test)
+int		**rot_up(int **i, int *test)
 {
-	int j;
-	int k;
-	int bkp;
+	int j[2];
 
-	j = 0;
-	k = 0;
-	while (k <= 3)
+	j[0] = 0;
+	j[1] = 0;
+	while (j[1] <= 3)
 	{
-		if (j <= 3)
+		if (j[0] <= 3)
 		{
-			if ((bkp = i[j][k]) == 0)
-			{
-				while (++j <= 3 && i[j][k] != 0)
+			if (i[j[0]][j[1]] == 0)
+				while (++j[0] <= 3 && i[j[0]][j[1]] != 0)
 				{
-					if (i[j][k] != 0)
-					{
-						*test = 1;
-						i[j - 1][k] = i[j][k];
-						i[j][k] = 0;
-					}
+					*test = 1;
+					i[j[0] - 1][j[1]] = i[j[0]][j[1]];
+					i[j[0]][j[1]] = 0;
 				}
-			}
 			else
-				j++;
+				j[0]++;
 		}
 		else
-		  {
-		    k++;
-		    j = 0;
-		  }
+		{
+			j[1]++;
+			j[0] = 0;
+		}
 	}
-	return(i);
+	return (i);
 }

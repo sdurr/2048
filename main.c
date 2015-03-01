@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -7,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:04:39 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 17:12:48 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/03/01 18:46:38 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,30 +17,28 @@
 
 int main(void)
 {
-	int x;
-	int y;
-	int new_x;
-	int new_y;
-	WINDOW *st;
-	int key;
-	int **i;
+	t_coord		x_y;
+	WINDOW		*st;
+	int			key;
+	int			**i;
 
 	i = init_i();
 	i = rand_board(i);
 	st = init_curses(i);
-	getmaxyx(stdscr, y, x);
+	getmaxyx(stdscr, x_y.y, x_y.x);
 	while (1)
 	{
-		getmaxyx(stdscr, new_y, new_x);
-		if (y != new_y || x != new_x)
+		getmaxyx(stdscr, x_y.new_y, x_y.new_x);
+		if (x_y.y != x_y.new_y || x_y.x != x_y.new_x)
 		{
-			y = new_y;
-			x = new_x;
+			x_y.y = x_y.new_y;
+			x_y.x = x_y.new_x;
+			refresh();
 			draw_board(i);
 		}
 		key = key_pad(st);
 		i = send_digit(key, i);
 	}
 	endwin();
-return (0);
+	return (0);
 }

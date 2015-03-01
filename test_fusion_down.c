@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 21:00:36 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 16:01:58 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/03/01 17:25:20 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	**test_fusion_down(int **i, int *test)
 	while (k <= 3)
 	{
 		while (j > 0)
-	    {
+		{
 			if (i[j][k] == i[j - 1][k] && i[j][k] != 0)
 			{
 				*test = 1;
@@ -30,9 +30,9 @@ int	**test_fusion_down(int **i, int *test)
 				i[j - 1][k] = 0;
 			}
 			j--;
-	    }
-	  j = 3;
-	  k++;
+		}
+		j = 3;
+		k++;
 	}
-	return(i);
+	return (i);
 }

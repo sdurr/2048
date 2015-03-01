@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rot_right.c                                        :+:      :+:    :+:   */
+/*   press_right.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 21:00:36 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 18:11:26 by sdurr            ###   ########.fr       */
+/*   Created: 2015/03/01 17:16:07 by sdurr             #+#    #+#             */
+/*   Updated: 2015/03/01 17:17:32 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <curses.h>
 #include "game.h"
 
-int	**rot_right(int **i, int *test)
+int			**press_right(int **i)
 {
-	int j;
-	int k;
+	int test;
 
-	j = 0;
-	k = 3;
-	while (j <= 3)
-	{
-		if (i[j][k] == 0)
-		{
-			while (--k >= 0 && i[j][k] != 0)
-			{
-				*test = 1;
-				i[j][k + 1] = i[j][k];
-				i[j][k] = 0;
-			}
-		}
-		else if (k > 0)
-			k--;
-		else
-		{
-			k = 3;
-			j++;
-		}
-	}
+	test = 0;
+	i = rot_right(i, &test);
+	i = rot_right(i, &test);
+	i = rot_right(i, &test);
+	i = rot_right(i, &test);
+	i = test_fusion_right(i, &test);
+	i = rot_right(i, &test);
+	if (test == 1)
+		i = rand_board(i);
+	test = 0;
+	clear();
+	draw_board(i);
 	return (i);
 }

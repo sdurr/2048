@@ -6,7 +6,7 @@
 #    By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/27 22:03:00 by sdurr             #+#    #+#              #
-#    Updated: 2015/03/01 17:09:29 by sdurr            ###   ########.fr        #
+#    Updated: 2015/03/01 18:41:01 by sdurr            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -17,8 +17,8 @@ SRC			= main.c \
 				draw_board.c \
 				send_digit.c \
 				key_pad.c \
-				init_struct.c \
 				print_tab.c \
+				print_tab_suite.c \
 				init_i.c \
 				rot_right.c \
 				rot_left.c \
@@ -32,6 +32,8 @@ SRC			= main.c \
 				test_random.c \
 				press_down.c \
 				press_left.c \
+				press_right.c \
+				press_up.c \
 
 OBJ			= $(SRC:.c=.o)
 
@@ -45,7 +47,7 @@ PATHLIB		= -I libft/includes
 
 $(NAME)	:		$(OBJ)
 				Make -C libft/
-				$(CC) $(CFLAGS) -o $(NAME) $(OBJ) -L libft/ -lft -lncurses
+				$(CC) $(CFLAGS) -o $(NAME) $(OBJ) -L libft/ -lft -lncurses -lmenu
 
 clean	:
 				$(RM) $(OBJ)

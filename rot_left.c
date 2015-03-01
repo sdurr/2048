@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 21:00:36 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 16:07:19 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/03/01 18:08:02 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,31 +16,27 @@ int	**rot_left(int **i, int *test)
 {
 	int j;
 	int k;
-	int bkp;
 
 	j = 0;
 	k = 0;
 	while (j <= 3)
 	{
-		if ((bkp = i[j][k]) == 0)
+		if (i[j][k] == 0)
 		{
 			while (++k <= 3 && i[j][k] != 0)
 			{
-				if (i[j][k] != bkp)
-				{
-					*test = 1;
-					i[j][k-1] = i[j][k];
-					i[j][k] = 0;
-				}
+				*test = 1;
+				i[j][k - 1] = i[j][k];
+				i[j][k] = 0;
 			}
 		}
 		else if (k < 3)
-		  k++;
+			k++;
 		else
-		  {
-		    k = 0;
-		    j++;
-		  }
+		{
+			k = 0;
+			j++;
+		}
 	}
-	return(i);
+	return (i);
 }
