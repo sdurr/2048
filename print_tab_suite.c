@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 18:16:57 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 18:28:04 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/03/01 19:06:15 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,5 @@ void		print_tab_suite(int **i, int j, int k)
 	j++;
 	if (i[k][j] != 0)
 		mvaddstr(LINES / 8 * 7, COLS / 8 * 7, ft_itoa(i[k][j]));
+	curs_set(0);
 }

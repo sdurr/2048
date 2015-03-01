@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:05:44 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 18:48:06 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/03/01 19:54:07 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 enum	e_const
 {
-	WIN = 2048
+	WIN = 16
 };
 
 typedef struct	s_coord
@@ -30,6 +30,7 @@ typedef struct	s_coord
 
 WINDOW			*init_curses(int **i);
 void			draw_board(int **i);
+void			draw_win(int **j);
 int				**send_digit(int key, int **i);
 int				key_pad(WINDOW *win);
 void			print_tab(int **i, int j, int k);
@@ -49,5 +50,5 @@ int				**press_left(int **i);
 int				**press_right(int **i);
 int				**press_up(int **i);
 int				test_random(int **i);
-
+int				test_win(int **i, int j);
 #endif

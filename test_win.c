@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_curses.c                                      :+:      :+:    :+:   */
+/*   test_win.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/27 22:28:34 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 19:32:42 by sdurr            ###   ########.fr       */
+/*   Created: 2015/03/01 18:49:44 by sdurr             #+#    #+#             */
+/*   Updated: 2015/03/01 19:48:09 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <curses.h>
-#include "libft.h"
 #include "game.h"
-#include <signal.h>
+#include <curses.h>
+#include <stdlib.h>
 
-WINDOW		*init_curses(int **i)
+int		test_win(int **i, int j)
 {
-	if (WIN % 2 != 0)
+	if (j == WIN)
 	{
-		ft_putstr_fd("YOU CONDITION FOR WIN IS NOT GOOD !", 2);
-		endwin();
-		exit(0);
+		clear();
+		draw_win(i);
+		return (1);
 	}
-	initscr();
-	noecho();
-	draw_board(i);
-	refresh();
-	return (stdscr);
+	return (0);
 }

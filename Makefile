@@ -6,7 +6,7 @@
 #    By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/27 22:03:00 by sdurr             #+#    #+#              #
-#    Updated: 2015/03/01 18:41:01 by sdurr            ###   ########.fr        #
+#    Updated: 2015/03/01 20:02:00 by sdurr            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -34,6 +34,8 @@ SRC			= main.c \
 				press_left.c \
 				press_right.c \
 				press_up.c \
+				test_win.c \
+				draw_win.c \
 
 OBJ			= $(SRC:.c=.o)
 
@@ -56,6 +58,7 @@ clean	:
 all		:		$(NAME)
 
 fclean	:		clean
+				Make -C libft/ fclean
 				$(RM) $(NAME)
 
 re		:		fclean all
