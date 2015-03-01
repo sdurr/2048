@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rot_right.c                                        :+:      :+:    :+:   */
+/*   test_random.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 21:00:36 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 16:06:45 by sdurr            ###   ########.fr       */
+/*   Created: 2015/03/01 15:12:38 by sdurr             #+#    #+#             */
+/*   Updated: 2015/03/01 15:30:01 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game.h"
+#include <stdlib.h>
 
-int	**test_fusion_left(int **i, int *test)
+int			test_random(int **i)
 {
 	int j;
 	int k;
@@ -21,18 +21,14 @@ int	**test_fusion_left(int **i, int *test)
 	k = 0;
 	while (j <= 3)
 	{
-	  while (k <= 3)
-	  {
-	      if (i[j][k] == i[j][k +1] && i[j][k] != 0)
-		  {
-			  *test = 1;
-			  i[j][k] = 2 * i[j][k];
-			  i[j][k + 1] = 0;
-		  }
-		  k++;
-	  }
-	  k = 0;
-	  j++;
+		while (k <= 3)
+		{
+			if (i[j][k] == 0)
+				return (1);
+			k++;
+		}
+		k = 0;
+		j++;
 	}
-	return(i);
+	exit (0);
 }

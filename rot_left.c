@@ -6,13 +6,13 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 21:00:36 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 22:04:35 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/03/01 16:07:19 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	**rot_left(int **i)
+int	**rot_left(int **i, int *test)
 {
 	int j;
 	int k;
@@ -28,6 +28,7 @@ int	**rot_left(int **i)
 			{
 				if (i[j][k] != bkp)
 				{
+					*test = 1;
 					i[j][k-1] = i[j][k];
 					i[j][k] = 0;
 				}
@@ -36,7 +37,7 @@ int	**rot_left(int **i)
 		else if (k < 3)
 		  k++;
 		else
-		  {	 
+		  {
 		    k = 0;
 		    j++;
 		  }

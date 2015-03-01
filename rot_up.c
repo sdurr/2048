@@ -6,13 +6,13 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 21:00:36 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 11:18:03 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/03/01 16:12:43 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	**rot_up(int **i)
+int	**rot_up(int **i, int *test)
 {
 	int j;
 	int k;
@@ -30,6 +30,7 @@ int	**rot_up(int **i)
 				{
 					if (i[j][k] != 0)
 					{
+						*test = 1;
 						i[j - 1][k] = i[j][k];
 						i[j][k] = 0;
 					}

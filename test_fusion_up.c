@@ -6,13 +6,13 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 21:00:36 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 11:27:29 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/03/01 16:13:18 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	**test_fusion_up(int **i)
+int	**test_fusion_up(int **i, int *test)
 {
 	int j;
 	int k;
@@ -23,8 +23,9 @@ int	**test_fusion_up(int **i)
 	{
 		while (j < 3)
 	    {
-			if (i[j][k] == i[j + 1][k])
+			if (i[j][k] == i[j + 1][k] && i[j][k] != 0)
 			{
+				*test = 1;
 				i[j][k] = 2 * i[j][k];
 				i[j + 1][k] = 0;
 			}

@@ -6,7 +6,7 @@
 #    By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/27 22:03:00 by sdurr             #+#    #+#              #
-#    Updated: 2015/03/01 11:20:28 by sdurr            ###   ########.fr        #
+#    Updated: 2015/03/01 15:15:12 by sdurr            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -29,6 +29,7 @@ SRC			= main.c \
 				test_fusion_up.c \
 				test_fusion_left.c \
 				rand_board.c \
+				test_random.c \
 
 OBJ			= $(SRC:.c=.o)
 
