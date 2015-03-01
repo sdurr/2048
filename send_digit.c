@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 13:31:06 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 16:11:56 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/03/01 17:09:56 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,33 +20,9 @@ int 		**send_digit(int key, int **i)
 
 	test = 0;
 	if (key == KEY_DOWN)
-	{
-		i = rot_down(i, &test);
-		i = rot_down(i, &test);
-		i = rot_down(i, &test);
-		i = rot_down(i, &test);
-		i = test_fusion_down(i, &test);
-		i = rot_down(i, &test);
-		if (test == 1)
-		i = rand_board(i);
-		test = 0;
-		clear();
-		draw_board(i);
-	}
+		i = press_down(i);
 	if (key == KEY_LEFT)
-	{
-		i = rot_left(i, &test);
-		i = rot_left(i, &test);
-		i = rot_left(i, &test);
-		i = rot_left(i, &test);
-		i = test_fusion_left(i, &test);
-		i = rot_left(i, &test);
-		if (test == 1)
-			i = rand_board(i);
-		test = 0;
-		clear();
-		draw_board(i);
-	}
+		i = press_left(i);
 	if (key == KEY_RIGHT)
 	{
 		i = rot_right(i, &test);

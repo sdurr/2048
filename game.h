@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -6,7 +7,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:05:44 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 16:12:20 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/03/01 17:09:17 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +36,8 @@ int			**test_fusion_left(int **i, int *test);
 int			**test_fusion_down(int **i, int *test);
 int			**test_fusion_up(int **i, int *test);
 int			**rand_board(int **i);
+int			**press_down(int **i);
+int			**press_left(int **i);
 int			test_random(int **i);
+
 #endif
