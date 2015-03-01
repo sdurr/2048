@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:28:34 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 19:32:42 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/03/01 20:53:51 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "game.h"
 #include <signal.h>
 
-WINDOW		*init_curses(int **i)
+WINDOW		*init_curses(void)
 {
 	if (WIN % 2 != 0)
 	{
@@ -25,7 +25,6 @@ WINDOW		*init_curses(int **i)
 	}
 	initscr();
 	noecho();
-	draw_board(i);
 	refresh();
 	return (stdscr);
 }

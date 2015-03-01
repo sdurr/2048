@@ -6,7 +6,7 @@
 #    By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/27 22:03:00 by sdurr             #+#    #+#              #
-#    Updated: 2015/03/01 20:23:02 by sdurr            ###   ########.fr        #
+#    Updated: 2015/03/01 21:46:18 by sdurr            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -50,7 +50,7 @@ PATHLIB		= -I libft/includes
 
 $(NAME)	:		$(OBJ)
 				Make -C libft/
-				$(CC) $(CFLAGS) -o $(NAME) $(OBJ) -L libft/ -lft -lncurses -lmenu
+				$(CC) $(CFLAGS) -o $(NAME) $(OBJ) -L libft/ -lft -lncurses -lmenu -g
 
 clean	:
 				$(RM) $(OBJ)

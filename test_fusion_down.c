@@ -6,13 +6,13 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 21:00:36 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 19:48:43 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/03/01 20:55:32 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	**test_fusion_down(int **i, int *test)
+int	**test_fusion_down(int **i, int *test, t_coord *s)
 {
 	int j;
 	int k;
@@ -27,7 +27,7 @@ int	**test_fusion_down(int **i, int *test)
 			{
 				*test = 1;
 				i[j][k] = 2 * i[j][k];
-				test_win(i, i[j][k]);
+				test_win(i, i[j][k], s);
 				i[j - 1][k] = 0;
 			}
 			j--;

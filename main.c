@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:04:39 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 18:46:38 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/03/01 21:47:50 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ int main(void)
 	int			**i;
 
 	i = init_i();
-	i = rand_board(i);
-	st = init_curses(i);
+	rand_board(i);
+	st = init_curses();
 	getmaxyx(stdscr, x_y.y, x_y.x);
+	draw_board(i, &x_y);
 	while (1)
 	{
 		getmaxyx(stdscr, x_y.new_y, x_y.new_x);
@@ -34,10 +35,10 @@ int main(void)
 			x_y.y = x_y.new_y;
 			x_y.x = x_y.new_x;
 			refresh();
-			draw_board(i);
+			draw_board(i, &x_y);
 		}
 		key = key_pad(st);
-		i = send_digit(key, i);
+		i = send_digit(key, i, &x_y);
 	}
 	endwin();
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 18:22:40 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 18:42:03 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/03/01 21:32:05 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int		**init_i(void)
 	int	j;
 
 	j = 0;
-	i = malloc(sizeof(int) * 5);
-	while (j < 4)
+	i = malloc(sizeof(int *) * 5);
+	while (j < 5)
 		i[j++] = malloc(sizeof(int) * 5);
 	i[0][0] = 0;
 	i[0][1] = 0;

@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:36:03 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 20:01:09 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/03/01 20:58:31 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <curses.h>
 #include <stdlib.h>
 
-void		draw_win(int **j)
+void		draw_win(int **j, t_coord *s)
 {
 	int i;
 
@@ -32,5 +32,5 @@ void		draw_win(int **j)
 		endwin();
 		exit (0);
 	}
-	draw_board(j);
+	draw_board(j, s);
 }
