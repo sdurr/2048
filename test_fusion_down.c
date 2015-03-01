@@ -12,34 +12,26 @@
 
 #include "game.h"
 
-int	**rot_down(int **i)
+int	**test_fusion_down(int **i)
 {
 	int j;
 	int k;
-	int bkp;
 
 	j = 3;
-	k = 0;
-	while (k <= 3)
+	k = 3;
+	while (j >= 0)
 	{
-		if ((bkp = i[j][k]) == 0)
-		{
-			while (--j <= 3 && i[j][k] != 0)
-			{
-				if (i[j][k] != bkp)
-				{
-					i[j - 1][k] = i[j][k];
-					i[j][k] = 0;
-				}
-			}
+	  while (k >= 0)
+	    {
+	      if (i[j][k] == i[j - 1][k])
+		{	     
+		  i[j][k] = 2 * i[j][k];
+		  i[j + 1][k] = 0; 
 		}
-		else if (k < 3)
-		  j--; xcv
-		else
-		  {	 
-		    k++;
-		    j = 3;
-		  }
+		  k--;
+	    }			  
+	      k = 3;
+	      j--;
 	}
 	return(i);
 }

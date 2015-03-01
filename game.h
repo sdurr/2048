@@ -29,8 +29,10 @@ int			**init_i(void);
 int			**rot_right(int **i);
 int			**rot_left(int **i);
 int			**rot_up(int **i);
+int			**rot_down(int **i);
 int			**test_fusion_right(int **i);
 int			**test_fusion_left(int **i);
+int			**test_fusion_down(int **i);
 int			**rand_board(int **i);
 
 #endif

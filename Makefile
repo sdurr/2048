@@ -23,7 +23,9 @@ SRC			= main.c \
 				rot_right.c \
 				rot_left.c \
 				rot_up.c \
+				rot_down.c \
 				test_fusion_right.c \
+				test_fusion_down.c \
 				test_fusion_left.c \
 				rand_board.c \
 
