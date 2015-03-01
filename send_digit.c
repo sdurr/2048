@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 13:31:06 by sdurr             #+#    #+#             */
-/*   Updated: 2015/03/01 11:30:21 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/03/01 12:05:09 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int 		**send_digit(int key, int **i)
 	  i = rot_down(i);
 		i = test_fusion_down(i);
 	  i = rot_down(i);
+	  i = rand_board(i);
 		clear();
 		draw_board(i);
 	}
@@ -60,7 +61,7 @@ int 		**send_digit(int key, int **i)
 		i = rot_up(i);
 		i = test_fusion_up(i);
 		i = rot_up(i);
-		//i = rand_board(i);
+		i = rand_board(i);
 		clear();
 		draw_board(i);
 	}

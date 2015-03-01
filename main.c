@@ -7,7 +7,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/27 22:04:39 by sdurr             #+#    #+#             */
-/*   Updated: 2015/02/28 20:43:31 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/03/01 12:01:59 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int main(void)
 	int **i;
 
 	i = init_i();
+	i = rand_board(i);
 	st = init_curses(i);
 	getmaxyx(stdscr, y, x);
 	while (1)
